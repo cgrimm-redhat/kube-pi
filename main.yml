@@ -1,0 +1,22 @@
+---
+- hosts: kubecluster
+  become: yes
+  roles:
+    - common
+    - docker
+    - kube
+
+- hosts: controller
+  become: yes
+  roles:
+    - kube-deploy
+
+- hosts: armnodes
+  become: yes
+  roles:
+    - node-join
+
+- hosts: x86nodes
+  become: yes
+  roles:
+    - node-join

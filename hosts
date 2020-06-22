@@ -1,0 +1,12 @@
+[kubecluster]
+kube[01:06]
+
+[control]
+kube01
+
+[armnodes]
+kube[02:04]
+
+[x86nodes]
+kube[05:06]
+
