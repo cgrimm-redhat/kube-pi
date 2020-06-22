@@ -6,10 +6,13 @@
     - docker
     - kube
 
-- hosts: controller
+- hosts: control
   become: yes
   roles:
     - kube-deploy
+  
+  environment:
+    - KUBECONFIG: /etc/kubernetes/admin.conf
 
 - hosts: armnodes
   become: yes

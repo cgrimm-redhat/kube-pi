@@ -1,5 +1,12 @@
 ---
 # tasks file for common
+- name: copy hostfile for lab
+  copy:
+    src: hosts
+    dest: /etc/hosts
+    owner: root
+    group: root
+    mode: '0644'
 
 - name: Confirm an up-to-date apt cache is on the system
   apt:
@@ -22,8 +29,15 @@
 # https://wiki.ubuntu.com/ARM/RaspberryPi#Raspberry_Pi_packages
 - name: add memory cgroup config to boot params
   replace:
-    path: /boot/firmware/nobtcmd.txt
+    path: /boot/firmware/cmdline.txt
     regexp: '(fixrtc)$'
-    replace: '\1 cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory'
+    replace: '\1 cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory swapaccount=1'
+  when: inventory_hostname in groups['armnodes'] or inventory_hostname in groups['control']
   notify: reboot server
 
+- name: Disable SWAP in fstab since kube can't work with swap
+  replace:
+    path: /etc/fstab
+    regexp: '^([^#].*?\sswap\s+sw\s+.*)$'
+    replace: '# \1'
+  notify: reboot server
