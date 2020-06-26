@@ -1,5 +1,8 @@
 domain: grimm.lab
 master_ip: "{{ hostvars[groups['control'][0]]['ansible_default_ipv4'].address }}"
+nameserver1: 192.168.1.53
+nameserver2: 1.1.1.1
+
 # Kubernetes
 kube_version: v1.16.3
 token: 6yrxf2.41ootlx7lbbpjbqn

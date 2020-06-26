@@ -1,13 +1,4 @@
 ---
-# tasks file for common
-- name: copy hostfile for lab
-  copy:
-    src: hosts
-    dest: /etc/hosts
-    owner: root
-    group: root
-    mode: '0644'
-
 - name: Confirm an up-to-date apt cache is on the system
   apt:
     update_cache: yes
