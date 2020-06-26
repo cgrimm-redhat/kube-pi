@@ -3,10 +3,9 @@
   become: yes
   roles:
     - common
-    - dnskube
     - docker
     - kube
-
+      
 - hosts: control
   become: yes
   roles:

@@ -1,6 +1,0 @@
----
-# handlers file for dns
-- name: reload NetworkManager
-  service:
-    name: NetworkManager
-    state: reloaded
