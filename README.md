@@ -13,7 +13,7 @@ Internet Access
 
 This will deploy a cluster with one Rapsberry Pi 4 as the Master.  The remaining nodes (3 Raspberry Pi's and 2 x86 VMs) will be deployed as worker nodes.  The SDN is managed via Calico.
 
-Useage
+Usage
 --------------
 
 I do assume that you will have a user to do your SSH configuration, though the default with Ubuntu 20.04 is username ubuntu password ubuntu
