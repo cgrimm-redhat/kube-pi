@@ -6,13 +6,11 @@ The goal of this project is to deploy a small lab cluster of Kubernetes in a rep
 Current Configuration
 ------------
 
-4 Raspberry Pi Modle 4b 8GB
+ 4 Raspberry Pi Modle 4b 8GB
+ 2 x86 Virtual Machines running on a hypervisor
+ Ubuntu 20.04 on all systems
+ Internet Access
 
-2 x86 Virtual Machines running on a hypervisor
-
-Ubuntu 20.04 on all systems
-
-Internet Access
 
 This will deploy a cluster with one Rapsberry Pi 4 as the Master.  The remaining nodes (3 Raspberry Pi's and 2 x86 VMs) will be deployed as worker nodes.  The SDN is managed via Calico.
 
