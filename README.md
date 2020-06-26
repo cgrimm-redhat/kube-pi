@@ -24,6 +24,9 @@ If you are using the ubuntu username & password then the usage would look like
 
     ansible-playbook -i hosts main.yml -U ubuntu -k -K
 
+All variables should be managed through group_vars/all 
+The Kubernetes toke is the biggest gotcha here as it isn't automatically generated or populated which is a future modification to the code and may give you some headaches when attempting to join the nodes after the master is deployed.  A good portion of the vars are also unused at the moment, so consider those unimplemented for the time being.
+
 Kudos & Thanks
 ------------------
 
