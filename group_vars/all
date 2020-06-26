@@ -26,7 +26,11 @@ calico_version: '3.10'
 # For example, on DigitalOcean, you would use eth1 as that is the default private network interface.
 network_interface: "eth0"
 
+
+# change the below information if you wish to enable the dashboard on deployment.
+# Setting the enable_dashboard to yes and update the dashboard_refs to match the latest from github.com/kubernetes/dashboard
 enable_dashboard: no
+dashboard_defs: https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.3/aio/deploy/recommended.yaml
 
 # A list of insecure registries you might need to define
 # insecure_registries: []
