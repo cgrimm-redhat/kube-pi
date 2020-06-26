@@ -1,4 +1,4 @@
-domain: grimm.lab
+domain: lab
 master_ip: "{{ hostvars[groups['control'][0]]['ansible_default_ipv4'].address }}"
 nameserver1: 192.168.1.53
 nameserver2: 1.1.1.1
