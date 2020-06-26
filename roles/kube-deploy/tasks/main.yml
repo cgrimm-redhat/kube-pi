@@ -56,6 +56,6 @@
 - name: deploy kubernetes dashboard
   k8s:
     state: present
-    src: {{ dashboard_defs }}
+    src: "{{ dashboard_defs }}"
   when: enable_dashboard = yes
 
