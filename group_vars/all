@@ -1,7 +1,9 @@
 domain: lab
 master_ip: "{{ hostvars[groups['control'][0]]['ansible_default_ipv4'].address }}"
-nameserver1: 192.168.1.53
+nameserver1: 192.168.2.53
 nameserver2: 1.1.1.1
+nameserver3: 8.8.8.8
+nameserver4: 8.8.4.4
 
 # Kubernetes
 kube_version: v1.16.3
@@ -29,8 +31,8 @@ network_interface: "eth0"
 
 # Change the below information if you wish to enable the dashboard on deployment.
 # Setting enable_dashboard to yes and update the dashboard_refs to match the latest from github.com/kubernetes/dashboard
-enable_dashboard: no
-dashboard_defs: https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.3/aio/deploy/recommended.yaml
+enable_dashboard: yes
+dashboard_defs: https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.4/aio/deploy/recommended.yaml
 
 # A list of insecure registries you might need to define
 # insecure_registries: []
